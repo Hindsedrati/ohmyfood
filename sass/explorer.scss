@@ -1,28 +1,56 @@
-@use "../sass/utils/box-shadow.scss";
+@use "../sass/utils/mixins";
+@use "../sass/utils/colors";
 
 .explorer{
     text-align: center;
+    margin: 2rem;
     & h2{
-        margin-top: 2rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin: 1rem;
     }
     & p{
         font-size: 1rem;
     }
 & button{
-        color: white;
-        font-weight: 400;
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 2rem;
-        background-image: linear-gradient(to top, #9356DC, #FF79DA);
-        transition: transform 200ms;
-        margin-top: 1rem;
-        @include box-shadow.base-shadow;
+        @include mixins.base-button;
+        font-size: 1rem;
+}
+}
+
+.loader{
+    $animation-duration: 1s;
+    $animation-count: 2;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #ffff;
+    opacity: 0.9;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    animation: disappear 200ms $animation-duration*$animation-count forwards;
+    transform-origin: top;
+    &::after{
+        content: "";
+        height: 100px;
+        width: 100px;
+        border-right: 5px solid transparent;
+        border-top: 5px solid colors.$purple;
+        border-radius: 50%;
+        animation: spin $animation-duration infinite ease-in-out;
+        animation-iteration-count: $animation-count;
     }
-& button:hover{
-        transform: scale(1.02);
-        opacity: 0.9 ;
+
+}
+
+@keyframes disappear{
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg)
     }
 }
