@@ -1,0 +1,98 @@
+/*@mixin font-awesome ($font-weight: 400){
+    font-family: "Font Awesome 5 Free";
+    font-weight: $font-weight;
+    display: inline-block;
+    position: absolute;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+}*/
+/*@mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
+    content: "\f004";
+
+    @include font-awesome($font-weight);
+    font-size: 2rem;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: $opacity;
+    transition: all 200ms ease-in-out;
+}*/
+/*@mixin heart-animated {
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    &::before {
+        @include heart;
+    }
+    &::after {
+    // @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+    @include gradient;
+    }
+    &:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    }
+}*/
+#homepage .menus {
+  background-color: #f6f6f6;
+  margin-bottom: 2rem;
+}
+#homepage .menus .menus__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  #homepage .menus .menus__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+#homepage .menus .menus__cards .new {
+  position: relative;
+}
+#homepage .menus .menus__cards .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99E2D0;
+  color: #1b6150;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
+}
+#homepage .menus .cuisine {
+  padding-bottom: 1rem;
+}
+#homepage .menus .card__image {
+  height: 50rem;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  background-size: cover;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#homepage .menus .card__description {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+}
+#homepage .menus .card__description h3,
+#homepage .menus .card__description p {
+  padding: 0.3rem;
+}
+#homepage .menus .card__description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}/*# sourceMappingURL=menus.css.map */
