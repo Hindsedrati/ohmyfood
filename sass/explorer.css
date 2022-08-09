@@ -1,0 +1,119 @@
+/*@mixin font-awesome ($font-weight: 400){
+    font-family: "Font Awesome 5 Free";
+    font-weight: $font-weight;
+    display: inline-block;
+    position: absolute;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+}*/
+/*@mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
+    content: "\f004";
+
+    @include font-awesome($font-weight);
+    font-size: 2rem;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: $opacity;
+    transition: all 200ms ease-in-out;
+}*/
+/*@mixin heart-animated {
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    &::before {
+        @include heart;
+    }
+    &::after {
+    // @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+    @include gradient;
+    }
+    &:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    }
+}*/
+.explorer {
+  text-align: left;
+  margin: 2rem;
+}
+.explorer h2 {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+.explorer p {
+  font-weight: 300;
+}
+.explorer button {
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  transition: transform 200ms;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  font-size: 1rem;
+}
+.explorer button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  opacity: 0.9;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  -webkit-animation: disappear 200ms 2s forwards;
+          animation: disappear 200ms 2s forwards;
+  transform-origin: top;
+}
+.loader::after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #9356DC;
+  border-radius: 50%;
+  -webkit-animation: spin 1s infinite ease-in-out;
+          animation: spin 1s infinite ease-in-out;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+}
+
+@-webkit-keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=explorer.css.map */
